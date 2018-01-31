@@ -10,6 +10,7 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import rootReducer from "./rootReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { Route } from "react-router-dom";
 import { userLoggedIn } from "./actions/auth";
 
 const store = createStore(
@@ -25,7 +26,7 @@ if (localStorage.bookwormJWT) {
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <Route component={App} />
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")
